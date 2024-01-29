@@ -2,7 +2,6 @@
 #include <gtest/gtest.h>
 
 #include <tp1_cpp/Arbre.hpp>
-#include <tp1_cpp/FabriqueVegetaux.hpp>
 #include <tp1_cpp/Fleur.hpp>
 #include <tp1_cpp/Vegetal.hpp>
 
