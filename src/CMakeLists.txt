@@ -20,4 +20,4 @@ target_link_libraries( src PUBLIC Qt6::Widgets )
 add_executable( ${PROJECT_NAME}
                 main.cpp )
 
-target_link_libraries( ${PROJECT_NAME} PRIVATE Qt6::Widgets Qt6::Core )
+target_link_libraries( ${PROJECT_NAME} PRIVATE src Qt6::Widgets Qt6::Core )
