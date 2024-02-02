@@ -18,8 +18,9 @@ add_executable(
 )
 target_link_libraries(
   hello_test
-  base
-  GTest::gtest_main
+  PRIVATE
+    base
+    GTest::gtest_main
 )
 
 add_executable(
@@ -28,8 +29,9 @@ add_executable(
 )
 target_link_libraries(
   cpp_test
-  base
-  GTest::gtest_main
+  PRIVATE
+    base
+    GTest::gtest_main
 )
 
 include(GoogleTest)
