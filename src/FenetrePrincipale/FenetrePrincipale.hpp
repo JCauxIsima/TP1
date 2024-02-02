@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-namespace TestCompil::FenetrePrincipale {
+namespace TP1::FenetrePrincipale {
 
 class MainWindow : public QMainWindow
 {

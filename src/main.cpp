@@ -7,7 +7,7 @@ int main(int argc, char* argv[])
 {
   QApplication app(argc, argv);
 
-  TestCompil::FenetrePrincipale::MainWindow fenetre;
+  TP1::FenetrePrincipale::MainWindow fenetre;
   fenetre.show();
 
   return app.exec();

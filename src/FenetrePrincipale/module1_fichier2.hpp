@@ -1,7 +1,7 @@
 
 #pragma once
 
-namespace TestCompil::module1 {
+namespace TP1::module1 {
 
 class Fichier2
 {

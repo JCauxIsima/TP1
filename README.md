@@ -11,5 +11,5 @@ cmake --build .
 ## Run
 ```console
 ctest => one test successful
-.\bin\Debug\TestCompil.exe => UI shows
+.\bin\Debug\TP1.exe => UI shows
 ```
