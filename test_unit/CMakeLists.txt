@@ -10,8 +10,6 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-INCLUDE_DIRECTORIES( ../base )
-
 add_executable(
   hello_test
   hello_test.cpp # Only modification: cc -> cpp
