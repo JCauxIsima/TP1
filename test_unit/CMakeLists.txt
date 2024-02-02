@@ -10,7 +10,7 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-INCLUDE_DIRECTORIES( ../src )
+INCLUDE_DIRECTORIES( ../base )
 
 add_executable(
   hello_test
@@ -18,7 +18,7 @@ add_executable(
 )
 target_link_libraries(
   hello_test
-  src
+  base
   GTest::gtest_main
 )
 
@@ -28,7 +28,7 @@ add_executable(
 )
 target_link_libraries(
   cpp_test
-  src
+  base
   GTest::gtest_main
 )
 
