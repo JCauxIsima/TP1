@@ -128,6 +128,17 @@ TEST(ClassModelisationTest, Quand_Croissante_Fleur_Depace_Max_Taille_Block_Max) 
 }
 
 
+// CMake
+
+// L'ajout d'un fichier cpp doit être explicité dans les fichiers CMakeLists.txt.
+//
+// Pour un fichier de test, ce sera dans test_unit/CMakeLists.txt là où est
+// ajouté ce fichier "class_modelisation_test.cpp".
+// Pour un fichier source de l'application, ce sera dans src/CMakeLists.txt là
+// où est ajouté le fichier "Vegeral.cpp" par exemple.
+
+
+
 // Stratégie
 
 // La classe arbre est simpliste. Elle croit toujours de 1.
