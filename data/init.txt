@@ -2,6 +2,9 @@ Arbre
 Fleur 0.4
 Fleur 0.8
 Fleur 0.2
+Champignon 0.05
+Champignon 0.1
+Champignon 0.3
 Arbre
 Fruit
 Arbre

@@ -8,7 +8,7 @@ class Vegetal
 	public:
 		virtual ~Vegetal() = default;
 
-		double getTaille() const;
+		virtual double getTaille() const;
 
 		virtual void croissance() = 0;
 		virtual std::string getType() const = 0;

@@ -4,9 +4,12 @@
 #include "tp1_cpp/Vegetal.hpp"
 #include "tp1_cpp/strategie/IStratCroissance.hpp"
 
+#include "tp1_cpp/fabrique/IFabrique.hpp"
 #include "tp1_cpp/fabrique/FabriqueBase.hpp"
+#include "tp1_cpp/fabrique/FabriqueExterne.hpp"
 
 #include <algorithm>
+#include <array>
 #include <fstream>
 #include <iostream>
 #include <memory>
@@ -50,17 +53,24 @@ void Terrain::afficher()
 
 void chargerFichier(Terrain& terrain, const std::string& path)
 {
-	FabriqueBase fabriqueBase;
+	const std::array<std::unique_ptr<IFabrique>, 2> fabriques = {
+		std::make_unique<FabriqueBase>(),
+		std::make_unique<FabriqueExterne>()};
 	std::ifstream fichier(path);
 	std::string ligne;
 	while (std::getline(fichier, ligne))
 	{
-		auto resFabrique = fabriqueBase.creerVegetal(ligne);
-		if (resFabrique.has_value())
+		bool trouve = false;
+		for (const auto& fabrique : fabriques)
 		{
-			terrain.ajoutVegetal(std::move(resFabrique.value()));
+			auto resFabrique = fabrique->creerVegetal(ligne);
+			if (resFabrique.has_value())
+			{
+				terrain.ajoutVegetal(std::move(resFabrique.value()));
+				trouve = true;
+			}
 		}
-		else
+		if (!trouve)
 		{
 			std::cerr << "La ligne [" << ligne << "] n'a pu etre lu." << std::endl;
 		}
