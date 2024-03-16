@@ -7,6 +7,10 @@ target_sources( base
 )
 target_sources( base
   PRIVATE
+		tp1_cpp/strategie/Dormance.cpp tp1_cpp/strategie/CroissancePrintaniere.cpp tp1_cpp/strategie/CroissanceEstivale.cpp tp1_cpp/strategie/Secheresse.cpp
+)
+target_sources( base
+  PRIVATE
     FenetrePrincipale/FenetrePrincipale.cpp FenetrePrincipale/module1_fichier2.cpp
 )
 target_sources( base
