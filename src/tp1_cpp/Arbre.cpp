@@ -3,6 +3,8 @@
 
 #include "strategie/ICroissance.hpp"
 
+#include <string>
+
 void Arbre::croissance()
 {
 	if (mStrategieCroissance)
@@ -14,6 +16,11 @@ void Arbre::croissance()
 		// Fallback par defaut
 		setTaille(getTaille() + 1.);
 	}
+}
+
+std::string Arbre::getType() const
+{
+	return "Arbre";
 }
 
 void Arbre::setStrategieCroissance(ICroissance* croissance)

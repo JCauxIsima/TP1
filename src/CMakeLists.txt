@@ -11,6 +11,10 @@ target_sources( base
 )
 target_sources( base
   PRIVATE
+	tp1_cpp/Terrain.cpp tp1_cpp/fabrique/FabriqueBase.cpp
+)
+target_sources( base
+  PRIVATE
     FenetrePrincipale/FenetrePrincipale.cpp FenetrePrincipale/module1_fichier2.cpp
 )
 target_sources( base

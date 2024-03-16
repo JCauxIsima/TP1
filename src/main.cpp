@@ -1,5 +1,5 @@
 
-#include "tp1_cpp/Arbre.hpp"
+#include "tp1_cpp/Terrain.hpp"
 
 #include "tp1_cpp/strategie/Dormance.hpp"
 #include "tp1_cpp/strategie/CroissancePrintaniere.hpp"
@@ -11,12 +11,15 @@
 #include <QApplication>
 
 #include <iostream>
+#include <string>
 
 int main(int argc, char* argv[])
 {
   QApplication app(argc, argv);
 
-	Arbre monArbre;
+	Terrain terrain;
+	chargerFichier(terrain, "data/init.txt");
+
 	Dormance dormanceStrategie;
 	CroissancePrintaniere printaniereStrategie;
 	CroissanceEstivale estivaleStrategie;
@@ -32,22 +35,22 @@ int main(int argc, char* argv[])
 	 		case 0: break;
 	 		case 1: break;
 	 		case 2:
-				monArbre.setStrategieCroissance(&dormanceStrategie);
+				terrain.setStrategieCroissance(&dormanceStrategie);
 				break;
 	 		case 3:
-				monArbre.setStrategieCroissance(&printaniereStrategie);
+				terrain.setStrategieCroissance(&printaniereStrategie);
 				break;
 	 		case 4:
-				monArbre.setStrategieCroissance(&estivaleStrategie);
+				terrain.setStrategieCroissance(&estivaleStrategie);
 				break;
 	 		case 5:
-				monArbre.setStrategieCroissance(&secheresseStrategie);
+				terrain.setStrategieCroissance(&secheresseStrategie);
 				break;
 	   }
 	   if (choix == 0) break; // Quitte la boucle while (true)
 
-	   monArbre.croissance();
-		 std::cout << "\n\tMon arbre fait : " << monArbre.getTaille() << std::endl;
+	   terrain.croissance();
+		 terrain.afficher();
 	}
   //TP1::FenetrePrincipale::MainWindow fenetre;
   //fenetre.show();
