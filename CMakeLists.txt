@@ -15,7 +15,7 @@ set( LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib/${CMAKE_BUILD_TYPE} )
 
 set( CMAKE_AUTOMOC ON )
 set( CMAKE_AUTORCC ON )
-find_package( Qt6 REQUIRED COMPONENTS Core Widgets )
+find_package( Qt5 REQUIRED COMPONENTS Core Widgets )
 
 enable_testing()
 

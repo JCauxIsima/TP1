@@ -23,9 +23,9 @@ target_sources( base
 target_include_directories( base
   PUBLIC "." )
 
-target_link_libraries( base PUBLIC Qt6::Widgets )
+target_link_libraries( base PUBLIC Qt5::Widgets )
 
 add_executable( ${PROJECT_NAME}
                 main.cpp )
 
-target_link_libraries( ${PROJECT_NAME} PRIVATE base Qt6::Widgets Qt6::Core )
+target_link_libraries( ${PROJECT_NAME} PRIVATE base Qt5::Widgets Qt5::Core )

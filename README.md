@@ -4,7 +4,7 @@
 ```console
 mkdir build_debug
 cd build_debug
-cmake -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" ..
+cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=/opt/alg/qt-5.15.14-arm64-debug -GNinja ..
 cmake --build .
 ```
 
