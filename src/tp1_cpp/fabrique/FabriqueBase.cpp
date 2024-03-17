@@ -1,33 +1,24 @@
 
 #include "FabriqueBase.hpp"
 
-#include "tp1_cpp/Arbre.hpp"
-#include "tp1_cpp/Fleur.hpp"
+#include "tp1_cpp/fabrique_abs/IFabriqueAbstraite.hpp"
 
 #include <memory>
 #include <optional>
 #include <sstream>
 #include <string>
 
-static std::unique_ptr<Vegetal> creerArbre()
-{
-	return std::make_unique<Arbre>();
-}
-
-static std::unique_ptr<Vegetal> creerFleur(double tailleMax)
-{
-	return std::make_unique<Fleur>(tailleMax);
-}
+class Vegetal;
 
 std::optional<std::unique_ptr<Vegetal>>
-	FabriqueBase::creerVegetal(const std::string& donnees)
+FabriqueBase::creerVegetal(const IFabriqueAbstraite& fabriqueAbstraite, const std::string& donnees)
 {
 	std::istringstream iss(donnees);
 	std::string type;
 	iss >> type;
 	if (type == "Arbre")
 	{
-		return creerArbre();
+		return fabriqueAbstraite.creerArbre();
 	}
 	else if (type == "Fleur")
 	{
@@ -35,7 +26,7 @@ std::optional<std::unique_ptr<Vegetal>>
 		iss >> taille;
 		if (taille > 0)
 		{
-			return creerFleur(taille);
+			return fabriqueAbstraite.creerFleur(taille);
 		}
 		return nullptr;
 	}

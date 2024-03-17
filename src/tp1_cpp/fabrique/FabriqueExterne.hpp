@@ -12,5 +12,6 @@ class Vegetal;
 class FabriqueExterne : public IFabrique
 {
 	public:
-		std::optional<std::unique_ptr<Vegetal>> creerVegetal(const std::string& donnees);
+		std::optional<std::unique_ptr<Vegetal>>
+		creerVegetal(const IFabriqueAbstraite& fabriqueAbstraite, const std::string& donnees);
 };

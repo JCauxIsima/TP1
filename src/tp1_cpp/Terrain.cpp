@@ -8,6 +8,8 @@
 #include "tp1_cpp/fabrique/FabriqueBase.hpp"
 #include "tp1_cpp/fabrique/FabriqueExterne.hpp"
 
+#include "tp1_cpp/fabrique_abs/IFabriqueAbstraite.hpp"
+
 #include <algorithm>
 #include <array>
 #include <fstream>
@@ -51,7 +53,10 @@ void Terrain::afficher()
 			});
 }
 
-void chargerFichier(Terrain& terrain, const std::string& path)
+void chargerFichier(
+	const IFabriqueAbstraite& fabriqueAbstraite,
+	Terrain& terrain,
+	const std::string& path)
 {
 	const std::array<std::unique_ptr<IFabrique>, 2> fabriques = {
 		std::make_unique<FabriqueBase>(),
@@ -63,7 +68,7 @@ void chargerFichier(Terrain& terrain, const std::string& path)
 		bool trouve = false;
 		for (const auto& fabrique : fabriques)
 		{
-			auto resFabrique = fabrique->creerVegetal(ligne);
+			auto resFabrique = fabrique->creerVegetal(fabriqueAbstraite, ligne);
 			if (resFabrique.has_value())
 			{
 				terrain.ajoutVegetal(std::move(resFabrique.value()));

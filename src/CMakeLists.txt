@@ -19,6 +19,11 @@ target_sources( base
 )
 target_sources( base
   PRIVATE
+	tp1_cpp/fabrique_abs/FabriqueAbstraiteTempere.cpp tp1_cpp/fabrique_abs/FabriqueAbstraiteTropical.cpp
+	tp1_cpp/fabrique_abs/tempere/ArbreTempere.cpp tp1_cpp/fabrique_abs/tempere/FleurTempere.cpp tp1_cpp/fabrique_abs/tempere/AdapteurChampiTempere.cpp tp1_cpp/fabrique_abs/tropical/ArbreTropical.cpp tp1_cpp/fabrique_abs/tropical/FleurTropical.cpp tp1_cpp/fabrique_abs/tropical/AdapteurChampiTropical.cpp
+)
+target_sources( base
+  PRIVATE
     FenetrePrincipale/FenetrePrincipale.cpp FenetrePrincipale/module1_fichier2.cpp
 )
 target_sources( base

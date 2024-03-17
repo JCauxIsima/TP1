@@ -4,9 +4,11 @@
 #include "Vegetal.hpp"
 
 #include <memory>
+#include <string>
 #include <vector>
 
 class ICroissance;
+class IFabriqueAbstraite;
 
 class Terrain
 {
@@ -23,4 +25,7 @@ class Terrain
 		std::vector<std::unique_ptr<Vegetal>> mVegetals;
 };
 
-void chargerFichier(Terrain& terrain, const std::string& path);
+void chargerFichier(
+	const IFabriqueAbstraite& fabriqueAbstraite,
+	Terrain& terrain,
+	const std::string& path);
