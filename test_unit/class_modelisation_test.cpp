@@ -192,13 +192,6 @@ TEST(ClassModelisationTest, Quand_Croissante_Fleur_Depace_Max_Taille_Block_Max) 
 //    [...]
 
 
-// Adapteur
-
-// Une classe Champignon est disponible dans les fichier Champignon.hpp et Champignon.cpp.
-// Cette classe ne doit pas être modifiée.
-// Rajouter quelques lignes avec un type "Champignon" dans le fichier de configuration.
-// Faire en sorte qu'il soit possible de l'utiliser.
-
 
 // Fabrique abstraite
 
@@ -211,30 +204,3 @@ TEST(ClassModelisationTest, Quand_Croissante_Fleur_Depace_Max_Taille_Block_Max) 
 // Mettre en place une fabrique abstraite pour permettre d'isoler la logique
 // de création en fonction du climat et ainsi garantir que l'ensemble des Vegetal
 // créés sont bien de la même famille.
-
-
-// Decorateur
-
-// Pour ne pas avoir à créer chacun des types de vegetaux, proposer une solution
-// alternative utilisant :
-// - Une classe VegetalGeneric
-// - Le pattern decorateur
-// Une instanciation d'arbre serait de la forme :
-// auto monArbre = new CroissanceStrategieDecorateur(new VegetalGenerique())
-// Une instanciation de fleur serait de la forme :
-// auto maFleur = ne
-// 	 LimiteCroissanceMaxDecorateur(
-//   	 new CroissanceSpecific(
-//        new VegetalGenerique(),
-//        0.1),
-//     1.0)
-//   );
-
-
-// Iterator
-
-// Proposer un moyen simple d'itérer sur les Vegetal du Terrain.
-// /!\ On ne ré-invente pas la roue ici, on utilise ce qui existe dans le langage.
-
-
-// 
